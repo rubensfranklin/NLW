@@ -1,0 +1,25 @@
+html{
+
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#page-home {
+    height: 110vh;
+    background:  url('../assets/home-background.svg') no-repeat;
+    background-position: 10vw bottom;
+}
+
+#page-home .content{
+    width: 90%;
+    margin:  0 auto;
+}
+
+#page-home header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+}
