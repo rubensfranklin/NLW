@@ -27,3 +27,15 @@
     align-items: center;
 }
 }
+
+@media (min-width: 1700px){
+
+    background-position-x: 40vw;
+
+    
+}
+
+@media (max-height: 760px){
+
+    background-position-y: 200px;
+}
