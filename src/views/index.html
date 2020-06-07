@@ -1,82 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt_br">
+{% extends "layout.html" %}
 
-<head>
+{% set pageId = "page-home" %}
 
-    <meta charset="UTF-8">
+{% block styles %}
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/modal.css">
+{% endblock styles %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Next Level Week</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&Cedarville+Cursive:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-  
-
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/home.css">
-        <link rel="stylesheet" href="/styles/modal.CSS">
-        
-        <link rel="stylesheet" href="/styles/responsive.css">
-</head>
-<body>
-
-    <div id="page-home">
-
-
-        <div class="content">
-
-
-            <header>
-        
-                <img src="/assets/logo.svg">           
-                <a href="/create-point.html">
-                    <span></span>
-                 
-                    Cadastrar </a>
-        
-            </header>
-
-            <main>
-
-                <h1> Seu Mercado de residuos</h1>
-
-                <p>Powered by Rubens Franklin</p>
-                <a href="#"><span></span><strong></strong>Pesquise
-                </a>
-            </main>
-            
-            
-            
-        
-       
-    </div>
-
-    
-
-
-
-
-
-    
-<div id="modal">
-
+{% block content %}
     <div class="content">
-            <div class="header">
-                <h1>Pontos de Coleta</h1>
-                <a href="#">FECHAR</a>
-            </div>
-            <form action="/search-results.html">
-       <label for="search">Cidade</label>
-                <div class="search field">
-                    <input type="text" name="search">
-                    <button>
-                        <img src="/assets/search.svg" alt="BUSCAR">
-                    </button>
-                </div>
+        <header>
+            <img src="assets/logo.svg" alt="Logomarca">
+            <a href="/create-point">
+                <span></span>
+                Cadastre um ponto de coleta</a>
+        </header>
 
-            </form>
+        <main>
+            <h1>Seu marketplace de coleta de resíduos.</h1>
+            <p>
+                Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
+            <a href="#">
+                <span></span>
+                <strong>
+                    Pesquisar pontos de coleta</strong>
+            </a>
+        </main>
+
     </div>
-</div>
-</div>
+{% endblock content %}
 
-<script src="/scripts/index.js"></script>
-</body>
-</html>
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="scripts/index.js"></script>
+{% endblock scripts %}

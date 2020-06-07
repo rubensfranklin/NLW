@@ -2,9 +2,9 @@
   "name": "NLW",
   "version": "1.0.0",
   "description": "Treinamento Rocketseat",
-  "main": "server.js",
+  "main": " src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/rubensfranklin/NLW/issues"
   },
-  "homepage": "https://github.com/rubensfranklin/NLW#readme"
+  "homepage": "https://github.com/rubensfranklin/NLW#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-load": "^1.1.16",
+    "nunjucks": "^3.2.1",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }

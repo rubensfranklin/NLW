@@ -1,75 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt_br">
 
-<head>
+{% extends "layout.html" %}
 
-    <meta charset="UTF-8">
+{% set pageId = "page-search-results" %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resultado da Pesquisa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&Cedarville+Cursive:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-  
+{% block title %}
+    <title>Resultado da pesquisa</title>
+{% endblock title %}
 
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/search-results.css">
+{% block styles %}
+    <link rel="stylesheet" href="styles/search-results.css">
+{% endblock styles %}
 
-    <link rel="stylesheet" href="/styles/responsive.css">
-</head>
-<body>
+{% block content %}
 
-    <div id="page-search-results">
+    {% include "partials/page-header" %}
 
+    <main>
+        {% if total > 0 %}
+            <h4>
+                <strong>{{ total }}
+                    pontos</strong>
+                encontrados</h4>
+            <div class="cards">
 
-        
-            <header>
-        
-                <img src="/assets/logo.svg">           
-                <a href="/index.html">
-                    <span></span>
-                 
-                    Voltar para a Home </a>
-        
-            </header>
+                {% for place in places %}
+                    <div class="card">
+                        <img src="{{ place.image }}" alt="{{ place.name }}">
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items }}</h3>
+                        <p>
+                            {{ place.city }}, {{ place.state }}
+                            <br/>
+                            {{ place.address }}
+                            <br/>
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+                {% endfor %}
 
-      <main>
+            </div>
+            {% else %}
 
-        <h4>
+            <h4><strong>Nenhum</strong> local encontrado.</h4>
 
-            <strong>2 pontos</strong> encontrados.
-        </h4>
-        <div class="cards">
-            <img src="https://images.unsplash.com/photo-1542739674-b449a8938b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="COLECTORIA">
-            <h1>Colectoria</h1>
-            <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-            <p>
-                Rua Tutóia,1157 <br/>
-                Paraíso,<br/>
-                São Paulo- SP
-            </p>
+        {% endif %}
 
-        </div>
-        <div class="cards">
-            <img src="https://images.unsplash.com/photo-1551894116-15e3812343f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="PAPERSIDE">
-            <h1>Paperside</h1>
-            <h3>Papéis e Papelão</h3>
-            <p>
-                Rua Tutóia,1157 <br/>
-                Paraíso,<br/>
-                São Paulo- SP
-            </p>
-
-        </div>
-      </main>
-            
-        
-       
-    </div>
-
-    
-
-</div>
-
-    
-</script>
-</body>
-</html>
+    </main>
+{% endblock content %}
